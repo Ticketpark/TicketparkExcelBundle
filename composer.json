@@ -1,0 +1,26 @@
+{
+    "name": "ticketpark/excel-bundle",
+    "type": "symfony-bundle",
+    "description": "This bundle assists in creating Excel files with HtmlPhpExcel",
+    "keywords": ["excel"],
+    "license": "MIT",
+    "minimum-stability": "dev",
+    "authors": [
+        {
+            "name": "Ticketpark contributors and others",
+            "homepage": "https://github.com/Ticketpark/ExcelBundle/contributors"
+        }
+    ],
+
+    "require": {
+        "php": ">=5.3.3",
+        "ticketpark/htmlphpexcel": "0.2.1",
+        "ticketpark/file-bundle": "dev-master"
+    },
+
+    "autoload": {
+        "psr-0": { "Ticketpark\\ExcelBundle": "" }
+    },
+
+    "target-dir": "Ticketpark/ExcelBundle"
+}

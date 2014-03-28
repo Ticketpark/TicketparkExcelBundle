@@ -1,0 +1,3 @@
+ticketpark_excel_homepage:
+    pattern:  /hello/{name}
+    defaults: { _controller: TicketparkExcelBundle:Default:index }

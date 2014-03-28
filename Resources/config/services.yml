@@ -1,0 +1,7 @@
+parameters:
+    ticketpark.excel.creator.class: Ticketpark\ExcelBundle\ExcelCreator\ExcelCreator
+
+services:
+    ticketpark.excel.creator:
+        class: %ticketpark.excel.creator.class%
+        arguments: [@ticketpark.file.handler]
