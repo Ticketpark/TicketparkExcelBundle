@@ -13,6 +13,7 @@ class ExcelCreator implements ExcelCreatorInterface
     protected $content;
     protected $identifier;
     protected $useCache = true;
+    protected $utf8Mode;
 
     public function __construct(FileHandlerInterface $fileHandler)
     {
@@ -40,6 +41,22 @@ class ExcelCreator implements ExcelCreatorInterface
     }
 
     /**
+     * Change utf8 mode of values before writing them to excel cell
+     *
+     * @param string $mode (maybe "encode" or "decode" - will apply utf8_encode or utf8_decode to value)
+     */
+    public function changeUtf8Mode($mode)
+    {
+        if (!in_array($mode, array('encode', 'decode'))) {
+            throw new InvalidArgumentException('Only "encode" and "decode" are allowed in "changeUtf8Mode()".');
+        }
+
+        $this->utf8Mode = $mode;
+
+        return $this;
+    }
+
+    /**
      * @inheritDoc
      */
     public function create($excelWriterType = 'Excel2007')
@@ -60,6 +77,12 @@ class ExcelCreator implements ExcelCreatorInterface
             $file = $this->fileHandler->cache(null, $identifier, array($contentHash));
 
             $document = new HtmlPhpExcel($this->content);
+
+            if (null !== $this->utf8Mode) {
+                $var = 'utf8'.ucfirst($this->utf8Mode).'Values';
+                $document->$var();
+            }
+
             $document->process()->save($file, $excelWriterType);
         }
 
