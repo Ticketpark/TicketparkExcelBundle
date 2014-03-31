@@ -14,7 +14,7 @@
 
     "require": {
         "php": ">=5.3.3",
-        "ticketpark/htmlphpexcel": "0.2.2",
+        "ticketpark/htmlphpexcel": "0.3",
         "ticketpark/file-bundle": "dev-master"
     },
 
