@@ -4,7 +4,7 @@
     "description": "This bundle assists in creating Excel files with HtmlPhpExcel",
     "keywords": ["excel"],
     "license": "MIT",
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "authors": [
         {
             "name": "Ticketpark contributors and others",
@@ -14,7 +14,7 @@
 
     "require": {
         "php": ">=5.3.3",
-        "ticketpark/htmlphpexcel": "0.3",
+        "ticketpark/htmlphpexcel": "~0.3",
         "ticketpark/file-bundle": "~0.2"
     },
 
